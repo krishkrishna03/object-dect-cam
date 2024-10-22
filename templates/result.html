@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+</head>
+<body>
+    <h1>Detection Results</h1>
+    {% if original_img %}
+    <h2>Original Image</h2>
+    <img src="data:image/jpeg;base64,{{ original_img }}" alt="Original Image"><br>
+    {% endif %}
+    <h2>Detection Results</h2>
+    <img src="data:image/jpeg;base64,{{ results_img }}" alt="Detection Results"><br>
+    <h3>Objects Count: {{ objects_count }}</h3>
+    <p>Detected Objects: {{ object_names|join(', ') }}</p>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
